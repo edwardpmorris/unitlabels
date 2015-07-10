@@ -1,37 +1,40 @@
-"standard.name"	"canonical.units"	"shorthand"	"symbol"	"R.expression"
-"sea_water_temperature_as_Celsius"	"ºC"	"T.degC"	"T"	" expression(paste(Temp "" ("", degree, ""C)""))"
-"air_temperature_as_Celsius"	"ºC"	"T.degC"	"T"	" expression(paste(Temp., "" ("", degree, ""C)""))"
-"sea_water_practical_salinity"	1	"S.psu"	"S"	"Salinity (PSU)"
-"sea_water_pH_reported_on_NBS_scale"	1	" pH.NBS"	"pH"	"pH (NBS)"
-"ratio_of_particulate_organic_matter_to_total_suspended_solids"	1	"ratioPOMTSS"	"POM:TSS"	"POM:TSS"
-"downwelling_photosynthetic_photon_flux"	"mol/m2.s"	"PPF.umolm2s"	"PPF"	" expression(paste(PPF, "" ("", mu, ""mol photons "",m^{2}, s^{-1},"")"" ))"
-"rainfall"	"mm"	"rain.mm"	"Rainfall"	"Rainfall (mm)"
-"wind_speed_at_10m_above_surface"	"m/s"	"wind10.ms"	"u_10"	" expression(paste(italic(u)[10],"" (m "",s^{-1},"")""))"
-"carbon_dioxide_partial_pressure_in_sea_water"	"atm"	" pCO2sw.uatm"	"pCO_2_sw"	" expression(paste(pCO[2], "" ("", mu, ""atm)"" ))"
-"carbon_dioxide_partial_pressure_in_air"	"atm"	"pCO2air.uatm"	"pCO2_air"	" expression(paste(pCO[2][ air], "" ("", mu, ""atm)"" ))"
-"oxygen_partial_pressure_in_sea_water"	"atm"	"pO2.matm"	"pO2_sw"	" expression(paste(pO[2], "" (matm)"" ))"
-"oxygen_partial_pressure_in_air"	"atm"	"pO2.matm"	"pO2_air"	" expression(paste(pO[2], "" (matm)"" ))"
-"mass_concentration_of_chlorophyll_a_in_sea_water"	"g/m3"	"Chla.ugL"	"[Chla]"	" expression(paste(""["",Chl, italic(a),""]"", "" ("", mu, ""g "",L^{-1},"")"" ))"
-"mass_concentration_of_total_suspended_solids"	"g/m3"	"TSS.mgL"	"[TSS]"	" expression(paste(""[SPM]"", "" (mg "",L^{-1},"")"" ))"
-"mass_concentration_of_particulate_organic_matter"	"g/m3"	"POM.mgL"	"[POM]"	" expression(paste(""[POM]"", "" (mg "",L^{-1},"")"" ))"
-"sea_water_alkalinity_expressed_as_mole_equivalent"	"mol/m3"	"TA.umolL"	"A_T"	" expression(paste(A[T], "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_dissolved_molecular_oxygen_in_sea_water"	"mol/m3"	"O2.umolL"	"[O2]"	" expression(paste(""["",O[2],""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_dissolved_organic_carbon_in_sea_water"	"mol/m3"	"DOC.mmolL"	"[DOC]"	" expression(paste(""["",DOC,""]"", "" (mmol "",L^{-1},"")"" ))"
-"mole_concentration_of_ammonium_in_sea_water"	"mol/m3"	"NH4.umolL"	"[NH4]"	" expression(paste(""["",NH[4],""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_nitrite_in_sea_water"	"mol/m3"	"NO2.umolL"	"[NO2]"	" expression(paste(""["",NO[2],""]"", "" ("", mu, ""mol"",L^{-1},"")"" ))"
-"mole_concentration_of_silicate_in_sea_water"	"mol/m3"	"dSi.umolL"	"[dSi]"	" expression(paste(""["",Si(OH)[4],""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_phosphate_in_sea_water"	"mol/m3"	"dPi.umolL"	"[dPi]"	" expression(paste(""["",PO[4],""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_nitrate_in_sea_water"	"mol/m3"	"NO3.umolL"	"[NO3]"	" expression(paste(""["",NO[3],""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_dissolved_organic_nitrogen_in_sea_water"	"mol/m3"	"DON.umolL"	"[DON]"	" expression(paste(""["",DON,""]"", "" ("", mu, ""mol"",L^{-1},"")"" ))"
-"mole_concentration_of_dissolved_nitrogen_in_sea_water"	"mol/m3"	"DN.umolL"	"[DN]"	" expression(paste(""["",DN,""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_dissolved_inorganic_carbon_in_sea_water"	"mol/m3"	"DIC.mmolL"	"[DIC]"	" expression(paste(""[DIC] ("",""mmol "",L^{-1},"")"" ))"
-"mole_concentration_of_carbon_dioxide_in_sea_water"	"mol/m3"	"CO2.umolkgSW"	"[CO2]"	" expression(paste(""["",CO[2],""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_carbonate_in_sea_water"	"mol/m3"	"CO3.umolkgSW"	"[CO3]"	" expression(paste(""["",CO[3]^{-2},""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"mole_concentration_of_bicarbonate_in_sea_water"	"mol/m3"	"HCO3.umolkgSW"	"[HCO3]"	" expression(paste(""["",HCO[3]^{-1},""]"", "" ("", mu, ""mol "",L^{-1},"")"" ))"
-"surface_upward_mole_flux_of_carbon_dioxide"	"mol/m2.s"	"FluxCO2.mmolm2d"	"F_CO2"	" expression(paste(CO[2],"" Flux"", "" (mmol "",m^{-2},d^{-1},"")"" ))"
-"surface_upward_mole_flux_of_carbon_dioxide_as_carbon"	"mol/m2.s"	"FCO2.molCm2y"	"F_CO2"	" expression(paste(C,"" Flux"", "" (molC "",m^{-2},"" "",y^{-1},"")"" ))"
-"surface_upward_mole_transport_of_carbon"	"mol/s"	"FluxCO2.Mmold"	"T_CO2"	" expression(paste(CO[2],"" Transport"", "" (Mmol "",d^{-1},"")"" ))"
-"surface_upward_mass_transport_of_carbon"	"g/s"	"FluxC.Ggy"	"T_C"	" expression(paste(""C Transport"", "" (Gg "",y^{-1},"")"" ))"
-"surface_area_covered_by water"	"m2"	"waterarea.km"	"A"	" expression(paste(""Area"", "" ("",km^{2},"")"" ))"
-"aqueous_phase_solubility_of_carbon_dioxide"	"mol/m3.atm"	"KoCO2.cmh"	"Ko_CO2"	" expression(paste(italic(k)[w],"" (cm "",h^{-1},"")""))"
-"water–side gas transfer velocity_of_carbon_dioxide"	"m/s"	"kwCO2.cmh"	"kw_CO2"	" expression(paste(italic(k)[w],"" (cm "",h^{-1},"")""))"
+standard.name,sh.symbol,symbol.md,symbol.R,sh.units,units,canonical.units,units.md,units.R,shorthand,,symbol.md
+temperature_as_Celsius,T,*T*,italic(T),degC,ºC,ºC,ºC,"paste(degree,""C"")",T.degC,,*T[sw[*
+sea_water_temperature_as_Celsius,Tsw,*T*~sw~,italic(T)[sw],degC,ºC,ºC,ºC,"paste(degree,""C"")",T.degC,,*T[sw[*
+air_temperature_as_Celsius,Tair,*T*~air~,italic(T)[air],degC,ºC,ºC,ºC,"paste(degree,""C"")",T.degC,,*T[air[*
+sea_water_practical_salinity,Spsu,*S*~psu~,italic(S)[psu],,1,1,1,1,S.psu,,*S*
+sea_water_pH_reported_on_NBS_scale,pHNBS,*pH*~NBS~,italic(pH)[NBS],,1,1,1,1, pH.NBS,,*pH*
+mass_fraction_of_particulate_organic_matter_in_total_suspended_solids,wiPOMTSS,"*w~i,~*~POM:TSS~","italic(w)[list(italic(i),POM:TSS)]",,1,1,1,1,ratioPOMTSS,,*POM:TSS*
+rainfall,rain,*Rainfall*,italic(Rainfall),mm,mm,mm,mm,mm,rain.mm,,*Rainfall*
+wind_speed_at_10m_above_surface,u10,*u*~10~,italic(u)[10],m/s,m/s,m/s,m s~-1~,m~s^-1,wind10.ms,,*u[10[*
+carbon_dioxide_partial_pressure,pCO2,*p*~CO~~2~,italic(p)[CO[2]],uatm,uatm,atm,μatm,μatm, pCO2.uatm,,*p[CO[[2[*
+carbon_dioxide_partial_pressure_in_sea_water,pCO2sw,"*p*~sw,CO~~2~","italic(p)[list(sw,CO[2])]",uatm,uatm,atm,μatm,μatm, pCO2sw.uatm,,"*p[CO[[2[[,[ [sw[*"
+carbon_dioxide_partial_pressure_in_air,pCO2air,"*p*~air,CO~~2~","italic(p)[list(air,CO[2])]",uatm,uatm,atm,μatm,μatm,pCO2air.uatm,,"*p[CO[[2[[,[[air[*"
+oxygen_partial_pressure,pO2,*p*~O~~2~,italic(p)[O[2]],matm,matm,atm,matm,matm,pO2.matm,,*p[O[[2[*
+oxygen_partial_pressure_in_sea_water,pO2sw,"*p*~sw,O~~2~","italic(p)[list(sw,O[2])]",matm,matm,atm,matm,matm,pO2sw.matm,,"*p[O[[2[[,[[sw[*"
+oxygen_partial_pressure_in_air,pO2air,"*p*~air,O~~2~","italic(p)[list(air,O[2])]",matm,matm,atm,matm,matm,pO2air.matm,,"*p[O[[2[[,[[air[*"
+mass_concentration_of_chlorophyll_a_in_sea_water,nChla,*n*~Chla~,italic(n)[Chla],g/m3,g/m3,g/m3,g m~-3~,g~m^-3,Chla.ugL,,*C[Chla[*
+mass_concentration_of_total_suspended_solids,nTSS,*n*~TSS~,italic(n)[TSS],mg/L,mg/L,g/m3,g m~-3~,g~m^-3,TSS.mgL,,*C[TSS[*
+mass_concentration_of_particulate_organic_matter,nPOM,*n*~POM~,italic(n)[POM],mg/L,mg/L,g/m3,g m~-3~,g~m^-3,POM.mgL,,*C[POM[*
+sea_water_alkalinity_expressed_as_mole_equivalent,nAT,*n*~A~~T~,italic(n)[A[T]],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,TA.umolL,,*A_T*
+mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,nO2,*n*~O~~2~,italic(n)[O[2]],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,O2.umolL,,*C[O[[2[*
+mole_concentration_of_ammonium_in_sea_water,nNH4,*n*~NH~~4~,italic(n)[NH[4]],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,NH4.umolL,,*C[NH[[4[*
+mole_concentration_of_nitrite_in_sea_water,nNO2,*n*~NO~~2~,italic(n)[NO[2]],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,NO2.umolL,,*C[NO[[2[*
+mole_concentration_of_silicate_in_sea_water,ndSi,*n*~dSi~,italic(n)[dSi],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,dSi.umolL,,*C[dSi[*
+mole_concentration_of_phosphate_in_sea_water,ndPi,*n*~dPi~,italic(n)[dPi],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,dPi.umolL,,*C[dPi[*
+mole_concentration_of_nitrate_in_sea_water,nNO3,*n*~NO~~3~,italic(n)[NO[3]],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,NO3.umolL,,*C[NO[[3[*
+mole_concentration_of_dissolved_organic_nitrogen_in_sea_water,nDON,*n*~DON~,italic(n)[DON],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,DON.umolL,,*C[DON[*
+mole_concentration_of_dissolved_nitrogen_in_sea_water,nDN,*n*~DN~,italic(n)[DN],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,DN.umolL,,*C[DN[*
+mole_concentration_of_dissolved_organic_carbon_in_sea_water,nDOC,*n*~DOC~,italic(n)[DOC],mmol/L,mmol/L,mol/m3,mol m~-3~,mol~m^-3,DOC.mmolL,,*C[DOC[*
+mole_concentration_of_dissolved_inorganic_carbon_in_sea_water,nDIC,*n*~DIC~,italic(n)[DIC],mmol/L,mmol/L,mol/m3,mol m~-3~,mol~m^-3,DIC.mmolL,,*C[DIC[*
+mole_concentration_of_carbon_dioxide_in_sea_water,nCO2,*n*~CO~~2~,italic(n)[CO[2]],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,CO2.umolkgSW,,*C[CO[[2[*
+mole_concentration_of_carbonate_in_sea_water,nCO3,*n*~CO~~3~,italic(n)[CO[3]],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,CO3.umolkgSW,,*C[CO[[3[*
+mole_concentration_of_bicarbonate_in_sea_water,nHCO3,*n*~HCO~~3~,italic(n)[HCO[3]],mol/m3,mol/m3,mol/m3,mol m~-3~,mol~m^-3,HCO3.umolkgSW,,*C[HCO[[3[*
+downwelling_photosynthetic_photon_flux,PPFd,*PPF*~d~,italic(PPF)[d],umol/m2.s,umol/m2.s,mol/m2.s,μmol m~-2~ s~-1~,μmol~m^-2~s^-1,PPF.umolm2s,,*PPF*
+surface_upward_mole_flux_of_carbon_dioxide,FCO2,*F*~CO~~2~,italic(F)[CO[2]],mmol/m2.day,mmol/m2.day,mol/m2.s,mmol m~-2~ d~-1~,mmol~m^-2~d^-1,FluxCO2.mmolm2d,,*F[CO[[2[*
+surface_upward_mole_flux_of_carbon_dioxide_as_carbon,FCO2,*F*~CO~~2~,italic(F)[CO[2]],mol/m2.year,mol/m2.year,mol/m2.s,Mmol m~-2~ y~-1~,Mmol~m^-2~y^-1,FCO2.molCm2y,,*F[CO[[2[*
+surface_upward_mole_transport_of_carbon,dotnCO2,*ṅ*~CO~~2~,italic(ṅ)[CO[2]],Mmol/day,Mmol/day,mol/s,Mmol d~-1~,Mmol~d^-1,FluxCO2.Mmold,,*T[CO[[2[*
+surface_upward_mass_transport_of_carbon,dotmC,*ṁ*~C~,italic(ṁ)[C],Gg/year,Gg/year,g/s,Ggl y~-1~,Gg~y^-1,FluxC.Ggy,,*T[C[*
+surface_area_covered_by water,Awater,*A*~water~,italic(A)[water],km2,km2,m2,km~2~,km^2,waterarea.km,,*A*
+aqueous_phase_solubility_of_carbon_dioxide,KoCO2,"*K*~o,CO~~2~","italic(K)[list(o,CO[2])]",mol/m3.atm,mol/m3.atm,mol/m3.atm,mol m~-3~ atm~-1~,mol~m^-3~atm^-1,KoCO2.cmh,,*K[o[[CO[[2[*
+water–side gas transfer velocity_of_carbon_dioxide,kwCO2,"*k*~w,CO~~2~","italic(k)[list(w,CO[2])]",m/s,m/s,m/s,m s~-1~,m~s^-1,kwCO2.cmh,,"*k[w,[[CO[[2[*"

@@ -1,0 +1,35 @@
+---
+title: "Untitled"
+author: "Edward P. Morris"
+date: "July 10, 2015"
+output: html_document
+---
+
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r, results='asis'}
+definitions <- read.csv("~/Desktop/unitlabels/data/definitions.csv", stringsAsFactors=FALSE)
+cat(definitions$symbol.md)
+cat(definitions$units.md)
+```
+
+```{r}
+labs<- c()
+for(i in 1:length(definitions$symbol.R)){
+  labs[i]<- parse(text=definitions$symbol.R[i])
+
+}
+plot(1:10,1:10, pch="")
+text(seq(1,10,length.out =39),rep(1:6+1,39/6),labs, cex=0.7)
+
+labs<- c()
+for(i in 1:length(definitions$units.R)){
+  labs[i]<- parse(text=definitions$units.R[i])
+
+}
+plot(1:10,1:10, pch="")
+text(seq(1,10,length.out =39),rep(1:6+1,39/6),labs, cex=0.7)
+
+uls("T.degC", output="R")
+ ```

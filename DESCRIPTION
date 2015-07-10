@@ -6,4 +6,3 @@ Description: Allows pre-defined shorthand codes to be used to define parameter a
 Depends: R (>= 3.2.1)
 License: GPL-2.0
 LazyData: true
-Imports: udunits2
