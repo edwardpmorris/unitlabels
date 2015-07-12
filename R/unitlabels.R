@@ -1,9 +1,17 @@
 #' @title Insert parameter and unit labels in different markup languges
-#' @description Given a user defined 'short-hand' code for a parameter-unit this functions returns a label in the selected markup language.
-#' @details User defined 'short-hand' code for a parameter-unit combinations and their conversions into different markup languages are stored in a data file \code{data/definitions.csv}. Edit this file to add or adjust definitions. Short hand code can take any form, but may not contain R's reserved words (\url{http://cran.r-project.org/doc/manuals/r-release/R-lang.html#Reserved-words})  
+#' 
+#' @description Given a user defined 'short-hand' code for a parameter, unit of parameter-unit combination this functions returns a label in the selected markup language.
+#' 
+#' @details User defined 'short-hand' code for a parameters and units and their conversions into different markup languages are stored in a data file \code{data/definitions.csv}. Edit this file to add or adjust definitions. Short hand code can take any form, but may not contain R's reserved words (\url{http://cran.r-project.org/doc/manuals/r-release/R-lang.html#Reserved-words}). Parameter-unit combinations should be delimitated by a '.'
+#' 
 #' @param sh User defined 'short-hand' code for a parameter, unit or 'parameter.unit' combination
 #' @param output The desired markup languages to be returned
-#' @return A character string in the desired markup representing the requested label. \code{uls} returns the quantity symbol, \code{ulu} returns the quantity units, \code{ul} returns the combined quantity symbol and unit, \code{ulln} returns the quantity long name and \code{ulsn} returns the quantity standard name   
+#' @param definitions A file path to a csv file containing definitions and markup conversions
+#' @return A character string in the desired markup representing the requested label.
+#' 
+#' \code{uls} returns the quantity symbol
+#' 
+#' @rdname unitlabels
 #' @examples 
 #' uls(sh="T", output="R")
 #' uls(sh="T", output="md")
@@ -12,7 +20,10 @@
 #' ul("T.degC", output="R")
 #' ul("T.degC", output="md")
 #' @export      
-uls <- function(sh, output="R"){
+uls <- function(sh, output="R", definitions=NULL){
+  if(is.null(definitions)){definitions <- system.file("extdata", package = "unitlabels")
+  definitions <- paste0(definitions,"/definitions.csv")}
+  definitions <- read.csv(definitions, as.is = T)
   if(output=="R"){
     out <-definitions[match(sh,definitions$sh.symbol),paste0("symbol.",output)]
     out <- parse(text=out)
@@ -24,7 +35,15 @@ uls <- function(sh, output="R"){
   return(out)
 }
 
-ulu <- function(sh, output="R"){
+#' Insert parameter and unit labels in different markup languges
+#' 
+#' @return \code{ulu} returns the quantity units in the specified markup 
+#' @rdname unitlabels
+#' @export
+ulu <- function(sh, output="R", definitions=NULL){
+  if(is.null(definitions)){definitions <- system.file("extdata", package = "unitlabels")
+  definitions <- paste0(definitions,"/definitions.csv")}
+  definitions <- read.csv(definitions, as.is = T)
   if(output=="R"){
     out <-definitions[match(sh,definitions$sh.units),paste0("units.",output)]
     out <- parse(text=out)
@@ -36,18 +55,45 @@ ulu <- function(sh, output="R"){
   return(out)
 }
 
-ul <- function(sh, output="R"){
-  sh <- unlist(strsplit(sh,"[.]"))
-  if(output=="R"){
-    sy <-definitions[match(sh[1],definitions$sh.symbol),paste0("symbol.",output)]
-    un <-definitions[match(sh[2],definitions$sh.units),paste0("units.",output)]
-    out <- parse(text=paste0(sy,"~(", un, ")"))
+#' Insert parameter and unit labels in different markup languges
+#' 
+#' @return \code{ul} returns the combined quantity-units in the specified markup 
+#' @rdname unitlabels
+#' @export
+
+ul <- function(sh, output = "R", definitions = NULL) {
+  if (is.null(definitions)) {
+    definitions <- system.file("extdata", package = "unitlabels")
+    definitions <- paste0(definitions,"/definitions.csv")
   }
-  if(output=="md"){
-    sy <-definitions[match(sh[1],definitions$sh.symbol),paste0("symbol.",output)]
-    un <-definitions[match(sh[2],definitions$sh.units),paste0("units.",output)]
-    out <- paste0(sy,"~(", un, ")")
-    #knitr::opts_chunk$set("results", "asis") <- "asis"
+  definitions <- read.csv(definitions, as.is = T)
+  sh <- strsplit(sh,"[.]")
+  
+  get.lab <- function(sh,output) {
+    sy <-
+      definitions[match(sh[1],definitions$sh.symbol),paste0("symbol.",output)]
+    if(length(sh)==1){
+      out <- sy
+      if (output == "R") {
+        out <- parse(text = sy)
+      }
+      
+    }else{
+      un <-
+        definitions[match(sh[2],definitions$sh.units),paste0("units.",output)]
+      
+      if (output == "R") {
+        out <- parse(text = paste0(sy,"~(", un, ")"))
+      }
+      if (output == "md") {
+        out <- paste0(sy," (", un, ")")
+      }
+    }
+    return(out)
+  }
+  out <- unlist(lapply(sh, get.lab, output = output))
+  if (output == "R") {
+    out <- parse(text = out)
   }
   return(out)
 }

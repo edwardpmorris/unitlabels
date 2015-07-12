@@ -4,5 +4,5 @@
 #'
 #'
 #' @docType package
-#' @name unitlabels
+#' @name quantUL
 NULL
