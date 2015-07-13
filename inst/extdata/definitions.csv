@@ -2,6 +2,7 @@ standard.name,canonical.units,sh.symbol,symbol.md,symbol.R,units,sh.units,units.
 temperature_as_Celsius,ºC,T,*T*,italic(T),ºC,degC,ºC,"paste(degree,""C"")"
 sea_water_temperature_as_Celsius,ºC,Tsw,*T*~sw~,italic(T)[sw],ºC,degC,ºC,"paste(degree,""C"")"
 air_temperature_as_Celsius,ºC,Tair,*T*~air~,italic(T)[air],ºC,degC,ºC,"paste(degree,""C"")"
+conductivity_of_water,S/m,s,*s*,italic(s),S/m,S/m,S m^-1^,S m^-1^
 sea_water_practical_salinity,1,Spsu,*S*~psu~,italic(S)[psu],one,,NULL,NULL
 sea_water_pH_reported_on_NBS_scale,1,pHNBS,*pH*~NBS~,italic(pH)[NBS],one,,NULL,NULL
 mass_fraction_of_particulate_organic_matter_in_total_suspended_solids,1,wiPOMTSS,"*w~i,~*~POM:TSS~","italic(w)[list(italic(i),POM:TSS)]",one,,NULL,NULL
