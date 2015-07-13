@@ -1,4 +1,5 @@
 standard.name,canonical.units,sh.symbol,symbol.md,symbol.R,units,sh.units,units.md,units.R
+depth,m,z,*z*,italic(z),m,m,m,m
 temperature_as_Celsius,ºC,T,*T*,italic(T),ºC,degC,ºC,"paste(degree,""C"")"
 sea_water_temperature_as_Celsius,ºC,Tsw,*T*~sw~,italic(T)[sw],ºC,degC,ºC,"paste(degree,""C"")"
 air_temperature_as_Celsius,ºC,Tair,*T*~air~,italic(T)[air],ºC,degC,ºC,"paste(degree,""C"")"
