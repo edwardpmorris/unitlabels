@@ -2,7 +2,9 @@ Package: unitlabels
 Title: Format parameter and unit labels for insertion in R, Rmarkdown and LaTeX
 Version: 0.0.0.9000
 Authors@R: person("Edward P.", "Morris", email = "edward.morris@uca.es", role = c("aut", "cre"))
-Description: Allows pre-defined shorthand codes to be used to define parameter and unit labels, which are return in one of the specified markup formats (R_short, R_expression, Rmarkdown or LaTeX) 
+Description: Allows pre-defined shorthand codes to be used to define parameter and unit labels, which are return in one of the specified markup formats (R_short, R_expression, Rmarkdown or LaTeX). 
 Depends: R (>= 3.2.1)
-License: GPL-2.0
+License: GPL-2 | file LICENSE
 LazyData: true
+Suggests: knitr
+VignetteBuilder: knitr

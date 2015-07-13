@@ -1,0 +1,60 @@
+---
+title: "Parameter and unit labels for insertion in R, Rmarkdown and LaTeX"
+author: "Edward P. Morris"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{Parameter and unit labels for insertion in R, Rmarkdown and LaTeX}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+Scientific documents often require the use of relatively complicated terms for **quantities** and their **units**. Typing these out as 'R expressions', 'Markdown' or $\LaTeX$ can be tedious. So far, markdown does not contain a convenient mechanism for including 'short-hand' version of a quanity or unit labels.
+
+`unitlabels` is a simple package that allows users to specify 'short-hand' codes for quanity or unit labels and translations into different markup. So far only 'R expressions' and 'Rmarkdown' are supported.
+
+## Using `unitlabels`
+Three functions are available `ul`, `uls` and `ulu`, which return combined 'quantity-units symbol', 'quantity symbol' and 'units symbol', respectively. 
+
+Lets get started by loading the package:
+```{r, results='asis'}
+# load the package
+library(unitlabels)
+```
+
+Within an Rmarkdown document('.Rmd') we can now insert formatted text by calling the appropriate R function 'in-line'. Note for combinations of quantities and units, the 2 short-hand codes should be combined and delimited by a full stop, for example Temperature in degrees Celcius is:
+
+```{r, results='asis'}
+# return Rmarkdown label for temperature in degrees Celcius
+ul("T.degC", "md")
+```
+
++ `"T.degC"` is our user defined shortand for `r ul("T.degC", "md")`.
++ `r uls("T", "md")` was 25 `r ulu("degC","md")`.
+
+Setting the `output=` option to `R` returns labels as 'R expressions' ready to be used in plots, for example:
+
+```{r}
+plot(1:10,1:10, ylab = ul("T.degC", "R"), xlab = ul("Tsw.degC", "R"))
+```
+
+## Defining short-hand quantity units labels
+
+So far the short-hand quantity units labels are stored in a `definitions.csv` file within the package directory `extdata`. To find the file path on your system use:
+
+```{r, results='asis'}
+system.file("extdata", package = "unitlabels")
+```
+
+This file can be editted and saved by the user, furthermore facilities to define the path to a specific definitions file are provided. NOTE: test if this works!
+
+To see which short-hand quantities and unit labels are available we can directly access this file and produce a table:
+
+```{r, results='asis'}
+require(unitlabels)
+def <- system.file("extdata", package = "unitlabels")
+def <- paste0(def,"/definitions.csv")
+def <- read.csv(def, as.is = T)
+knitr::kable(def[,c("standard.name", "sh.symbol", "symbol.md")])
+knitr::kable(def[,c("standard.name", "sh.units", "units.md")])
+```
