@@ -7,6 +7,7 @@ sea_water_pH_reported_on_NBS_scale,1,pHNBS,*pH*~NBS~,italic(pH)[NBS],one,,NULL,N
 mass_fraction_of_particulate_organic_matter_in_total_suspended_solids,1,wiPOMTSS,"*w~i,~*~POM:TSS~","italic(w)[list(italic(i),POM:TSS)]",one,,NULL,NULL
 rainfall,mm,rain,*Rainfall*,italic(Rainfall),mm,mm,mm,mm
 wind_speed_at_10m_above_surface,m/s,u10,*u*~10~,italic(u)[10],m/s,m/s,m s^-1^,m~s^-1
+carbon_dioxide,atm,CO2,CO~2~,CO[2],uatm,uatm,μatm,μatm
 carbon_dioxide_partial_pressure,atm,pCO2,*p*~CO~~2~,italic(p)[CO[2]],uatm,uatm,μatm,μatm
 carbon_dioxide_partial_pressure_in_sea_water,atm,pCO2sw,"*p*~sw,CO~~2~","italic(p)[list(sw,CO[2])]",uatm,uatm,μatm,μatm
 carbon_dioxide_partial_pressure_in_air,atm,pCO2air,"*p*~air,CO~~2~","italic(p)[list(air,CO[2])]",uatm,uatm,μatm,μatm
