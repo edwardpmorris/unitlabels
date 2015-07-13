@@ -20,7 +20,7 @@
 #' ul("T.degC", output="R")
 #' ul("T.degC", output="md")
 #' @export      
-uls <- function(sh, output="R", definitions=NULL){
+uls <- function(sh, output="md", definitions=NULL){
   if(is.null(definitions)){definitions <- system.file("extdata", package = "unitlabels")
   definitions <- paste0(definitions,"/definitions.csv")}
   definitions <- read.csv(definitions, as.is = T)
@@ -38,7 +38,7 @@ uls <- function(sh, output="R", definitions=NULL){
 #' @return \code{ulu} returns the quantity units in the specified markup 
 #' @rdname insert_param_unit_labs
 #' @export
-ulu <- function(sh, output="R", definitions=NULL){
+ulu <- function(sh, output="md", definitions=NULL){
   if(is.null(definitions)){definitions <- system.file("extdata", package = "unitlabels")
   definitions <- paste0(definitions,"/definitions.csv")}
   definitions <- read.csv(definitions, as.is = T)
@@ -57,7 +57,7 @@ ulu <- function(sh, output="R", definitions=NULL){
 #' @rdname insert_param_unit_labs
 #' @export
 
-ul <- function(sh, output = "R", definitions = NULL) {
+ul <- function(sh, output = "md", definitions = NULL) {
   if (is.null(definitions)) {
     definitions <- system.file("extdata", package = "unitlabels")
     definitions <- paste0(definitions,"/definitions.csv")
