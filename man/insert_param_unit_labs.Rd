@@ -6,11 +6,11 @@
 \alias{ulu}
 \title{Insert parameter and unit labels in different markup languges}
 \usage{
-uls(sh, output = "R", definitions = NULL)
+uls(sh, output = "md", definitions = NULL)
 
-ulu(sh, output = "R", definitions = NULL)
+ulu(sh, output = "md", definitions = NULL)
 
-ul(sh, output = "R", definitions = NULL)
+ul(sh, output = "md", definitions = NULL)
 }
 \arguments{
 \item{sh}{User defined 'short-hand' code for a parameter, unit or 'parameter.unit' combination}

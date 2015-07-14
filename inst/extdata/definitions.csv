@@ -44,5 +44,6 @@ surface_upward_mole_transport_of_carbon,mol/s,dotnCO2,*ṅ*~CO~~2~,italic(ṅ)[C
 surface_upward_mass_transport_of_carbon,g/s,dotmC,*ṁ*~C~,italic(ṁ)[C],Gg/year,Gg/y,Gg y^-1^,Gg~y^-1
 surface_area_covered_by water,m2,Awater,*A*~water~,italic(A)[water],km2,km2,km^2^,km^2
 aqueous_phase_solubility_of_carbon_dioxide,mol/m3.atm,KoCO2,"*K*~o,CO~~2~","italic(K)[list(o,CO[2])]",mol/m3.atm,mol/m3atm,mol m^-3^ atm^-1^,mol~m^-3~atm^-1
-water–side gas transfer velocity_of_carbon_dioxide,m/s,kwCO2,"*k*~w,CO~~2~","italic(k)[list(w,CO[2])]",m/s,m/s,m s^-1^,m~s^-1
+water_side_gas_transfer_velocity_of_carbon_dioxide,m/s,kwCO2,"*k*~w,CO~~2~","italic(k)[list(w,CO[2])]",m/s,m/s,m s^-1^,m~s^-1
 schmidt_number _of_water,,Scw,*Sc*~w~,italic(Sc)[w],,,,
+gas_transfer_velocity_at_Sc660,m/s,k660,*k*~660~,italic(k)[660],m/s,m/s,m s^-1^,m~s^-1
