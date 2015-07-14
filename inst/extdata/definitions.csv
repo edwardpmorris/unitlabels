@@ -8,6 +8,7 @@ sea_water_practical_salinity,1,Spsu,*S*~psu~,italic(S)[psu],one,,NULL,NULL
 sea_water_pH_reported_on_NBS_scale,1,pHNBS,*pH*~NBS~,italic(pH)[NBS],one,,NULL,NULL
 mass_fraction_of_particulate_organic_matter_in_total_suspended_solids,1,wPOMTSS,*w*~POM:TSS~,italic(w)[POM:TSS],one,,NULL,NULL
 rainfall,mm,rain,*Rainfall*,italic(Rainfall),mm,mm,mm,mm
+wind_speed_at_zm_above_surface,m/s,uz,*u*~z~,italic(u)[z],m/s,m/s,m s^-1^,m~s^-1
 wind_speed_at_10m_above_surface,m/s,u10,*u*~10~,italic(u)[10],m/s,m/s,m s^-1^,m~s^-1
 carbon_dioxide,atm,CO2,CO~2~,CO[2],uatm,uatm,μatm,μatm
 carbon_dioxide_partial_pressure,atm,pCO2,*p*~CO~~2~,italic(p)[CO[2]],uatm,uatm,μatm,μatm
@@ -16,11 +17,11 @@ carbon_dioxide_partial_pressure_in_air,atm,pCO2air,"*p*~air,CO~~2~","italic(p)[l
 oxygen_partial_pressure,atm,pO2,*p*~O~~2~,italic(p)[O[2]],matm,matm,matm,matm
 oxygen_partial_pressure_in_sea_water,atm,pO2sw,"*p*~sw,O~~2~","italic(p)[list(sw,O[2])]",matm,matm,matm,matm
 oxygen_partial_pressure_in_air,atm,pO2air,"*p*~air,O~~2~","italic(p)[list(air,O[2])]",matm,matm,matm,matm
-volume_of_mesozooplankton_biomass,m3,VMZbio,*υ*~zoo. biomass~,italic(V)[zoo. biomass],m3,m3,m^3^,m^3
-specific_volume_of_mesozooplankton_biomass,m3/g,svMZbio,*υ*~zoo. biomass~,italic(upsilon)[zoo. biomass],m3/g,m3/g,m^3^ g^-1^,m^3 ~g^-1
+volume_of_mesozooplankton_biomass,m3,VMZbio,*V*~zoo.~~bio.~,italic(V)[zoo. bio.],m3,m3,m^3^,m^3
+specific_volume_of_mesozooplankton_biomass,m3/g,svMZbio,*υ*~zoo.~~bio.~,italic(upsilon)[zoo. bio.],m3/g,m3/g,m^3^ g^-1^,m^3 ~g^-1
+mass_concentration_of_mesozooplankton_biomass,g/m3,rMZbio,*ρ*~zoo.~~bio.~,italic(rho)[zoo. bio.],mg/L,mg/L,g dm^-3^,g~m^-3
 mass_concentration_of_chlorophyll_a_in_sea_water,g/m3,rChla,*ρ*~Chla~,italic(rho)[Chla],g/m3,g/m3,g m^-3^,g~m^-3
 mass_concentration_of_total_suspended_solids,g/m3,rTSS,*ρ*~TSS~,italic(rho)[TSS],mg/L,mg/L,g dm^-3^,g~m^-3
-mass_concentration_of_mesozooplankton_biomass,g/m3,rMZbio,*ρ*~zoo. biomass~,italic(rho)[zoo. biomass],mg/L,mg/L,g dm^-3^,g~m^-3
 mass_concentration_of_particulate_organic_matter,g/m3,rPOM,*ρ*~POM~,italic(rho)[POM],mg/L,mg/L,g dm^-3^,g~m^-3
 sea_water_alkalinity_expressed_as_mole_equivalent,mol/m3,cAT,*c*~A~~T~,italic(c)[A[T]],mol/m3,mol/m3,mol m^-3^,mol~m^-3
 mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,mol/m3,cO2,*c*~O~~2~,italic(c)[O[2]],mol/m3,mol/m3,mol m^-3^,mol~m^-3
@@ -44,3 +45,4 @@ surface_upward_mass_transport_of_carbon,g/s,dotmC,*ṁ*~C~,italic(ṁ)[C],Gg/yea
 surface_area_covered_by water,m2,Awater,*A*~water~,italic(A)[water],km2,km2,km^2^,km^2
 aqueous_phase_solubility_of_carbon_dioxide,mol/m3.atm,KoCO2,"*K*~o,CO~~2~","italic(K)[list(o,CO[2])]",mol/m3.atm,mol/m3atm,mol m^-3^ atm^-1^,mol~m^-3~atm^-1
 water–side gas transfer velocity_of_carbon_dioxide,m/s,kwCO2,"*k*~w,CO~~2~","italic(k)[list(w,CO[2])]",m/s,m/s,m s^-1^,m~s^-1
+schmidt_number _of_water,,Scw,*Sc*~w~,italic(Sc)[w],,,,
