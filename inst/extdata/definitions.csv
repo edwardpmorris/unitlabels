@@ -10,6 +10,7 @@ sea_water_practical_salinity,1,Spsu,*S*~psu~,italic(S)[psu],one,,NULL,NULL
 sea_water_pH_reported_on_NBS_scale,1,pHNBS,*pH*~NBS~,italic(pH)[NBS],one,,NULL,NULL
 mass_fraction_of_particulate_organic_matter_in_total_suspended_solids,1,wPOMTSS,*w*~POM:TSS~,italic(w)[POM:TSS],one,,NULL,NULL
 precipitation_rate,kg/m2.s,precipRate,*Precip. rate*,italic(Precip. rate),kg/m2.s,kg_m2s,kg m^-2^ s^-1^,kg~m^-2~s^-1
+daily_precipitation,mm/d,dPrecip,*Precipitation*,italic(Precipitation),mm/d,mm_d,mm d^-1^,mm~d^-1
 hourly_precipitation,mm/h,hPrecip,*Precipitation*,italic(Precipitation),mm/h,mm_h,mm h^-1^,mm~h^-1
 rainfall,mm,rain,*Rainfall*,italic(Rainfall),mm,mm,mm,mm
 wind_speed_at_zm_above_surface,m/s,uz,*u*~z~,italic(u)[z],m/s,m/s,m s^-1^,m~s^-1
