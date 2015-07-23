@@ -9,6 +9,7 @@ conductivity_of_water,S/m,s,*s*,italic(s),S/m,S_m,S m^-1^,S m^-1^
 sea_water_practical_salinity,1,Spsu,*S*~psu~,italic(S)[psu],one,,NULL,NULL
 sea_water_pH_reported_on_total_scale,1,pHtot,*pH*~total~,italic(pH)[total],one,,NULL,NULL
 sea_water_pH_reported_on_NBS_scale,1,pHNBS,*pH*~NBS~,italic(pH)[NBS],one,,NULL,NULL
+mass_ratio_of_particulate_organic_matter_to_chlorophyll_a,1,RPOMChla,*POM:Chla*,italic(POM:Chla),one,,NULL,NULL
 mass_ratio_of_chlorophyll_a_to_particulate_organic_matter,1,RChlaPOM,*Chla:POM*,italic(Chla:POM),one,,NULL,NULL
 mass_ratio_of_phaeophytin_to_chlorophyll_a,1,RPhaeoChla,*Phaeo:Chla*,italic(Phaeo:Chla),one,,NULL,NULL
 mass_fraction_of_phaeophytin_to_pigments,1,wPhaeoTotPig,*w*~Phaeo:Pigments~,italic(w)[Phaeo:Pigments],one,,NULL,NULL
