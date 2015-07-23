@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+
+<meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="generator" content="pandoc" />
+
+<meta name="author" content="Edward P. Morris" />
+
+<meta name="date" content="2015-07-22" />
+
+<title>Parameter and unit labels for insertion in R, Rmarkdown and LaTeX</title>
+
+
+
+<style type="text/css">code{white-space: pre;}</style>
+<style type="text/css">
+table.sourceCode, tr.sourceCode, td.lineNumbers, td.sourceCode {
+  margin: 0; padding: 0; vertical-align: baseline; border: none; }
+table.sourceCode { width: 100%; line-height: 100%; }
+td.lineNumbers { text-align: right; padding-right: 4px; padding-left: 4px; color: #aaaaaa; border-right: 1px solid #aaaaaa; }
+td.sourceCode { padding-left: 5px; }
+code > span.kw { color: #007020; font-weight: bold; }
+code > span.dt { color: #902000; }
+code > span.dv { color: #40a070; }
+code > span.bn { color: #40a070; }
+code > span.fl { color: #40a070; }
+code > span.ch { color: #4070a0; }
+code > span.st { color: #4070a0; }
+code > span.co { color: #60a0b0; font-style: italic; }
+code > span.ot { color: #007020; }
+code > span.al { color: #ff0000; font-weight: bold; }
+code > span.fu { color: #06287e; }
+code > span.er { color: #ff0000; font-weight: bold; }
+</style>
+<style type="text/css">
+  pre:not([class]) {
+    background-color: white;
+  }
+</style>
+
+
+<link href="data:text/css,body%20%7B%0A%20%20background%2Dcolor%3A%20%23fff%3B%0A%20%20margin%3A%201em%20auto%3B%0A%20%20max%2Dwidth%3A%20700px%3B%0A%20%20overflow%3A%20visible%3B%0A%20%20padding%2Dleft%3A%202em%3B%0A%20%20padding%2Dright%3A%202em%3B%0A%20%20font%2Dfamily%3A%20%22Open%20Sans%22%2C%20%22Helvetica%20Neue%22%2C%20Helvetica%2C%20Arial%2C%20sans%2Dserif%3B%0A%20%20font%2Dsize%3A%2014px%3B%0A%20%20line%2Dheight%3A%201%2E35%3B%0A%7D%0A%0A%23header%20%7B%0A%20%20text%2Dalign%3A%20center%3B%0A%7D%0A%0A%23TOC%20%7B%0A%20%20clear%3A%20both%3B%0A%20%20margin%3A%200%200%2010px%2010px%3B%0A%20%20padding%3A%204px%3B%0A%20%20width%3A%20400px%3B%0A%20%20border%3A%201px%20solid%20%23CCCCCC%3B%0A%20%20border%2Dradius%3A%205px%3B%0A%0A%20%20background%2Dcolor%3A%20%23f6f6f6%3B%0A%20%20font%2Dsize%3A%2013px%3B%0A%20%20line%2Dheight%3A%201%2E3%3B%0A%7D%0A%20%20%23TOC%20%2Etoctitle%20%7B%0A%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%20%20font%2Dsize%3A%2015px%3B%0A%20%20%20%20margin%2Dleft%3A%205px%3B%0A%20%20%7D%0A%0A%20%20%23TOC%20ul%20%7B%0A%20%20%20%20padding%2Dleft%3A%2040px%3B%0A%20%20%20%20margin%2Dleft%3A%20%2D1%2E5em%3B%0A%20%20%20%20margin%2Dtop%3A%205px%3B%0A%20%20%20%20margin%2Dbottom%3A%205px%3B%0A%20%20%7D%0A%20%20%23TOC%20ul%20ul%20%7B%0A%20%20%20%20margin%2Dleft%3A%20%2D2em%3B%0A%20%20%7D%0A%20%20%23TOC%20li%20%7B%0A%20%20%20%20line%2Dheight%3A%2016px%3B%0A%20%20%7D%0A%0Atable%20%7B%0A%20%20margin%3A%201em%20auto%3B%0A%20%20border%2Dwidth%3A%201px%3B%0A%20%20border%2Dcolor%3A%20%23DDDDDD%3B%0A%20%20border%2Dstyle%3A%20outset%3B%0A%20%20border%2Dcollapse%3A%20collapse%3B%0A%7D%0Atable%20th%20%7B%0A%20%20border%2Dwidth%3A%202px%3B%0A%20%20padding%3A%205px%3B%0A%20%20border%2Dstyle%3A%20inset%3B%0A%7D%0Atable%20td%20%7B%0A%20%20border%2Dwidth%3A%201px%3B%0A%20%20border%2Dstyle%3A%20inset%3B%0A%20%20line%2Dheight%3A%2018px%3B%0A%20%20padding%3A%205px%205px%3B%0A%7D%0Atable%2C%20table%20th%2C%20table%20td%20%7B%0A%20%20border%2Dleft%2Dstyle%3A%20none%3B%0A%20%20border%2Dright%2Dstyle%3A%20none%3B%0A%7D%0Atable%20thead%2C%20table%20tr%2Eeven%20%7B%0A%20%20background%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0A%0Ap%20%7B%0A%20%20margin%3A%200%2E5em%200%3B%0A%7D%0A%0Ablockquote%20%7B%0A%20%20background%2Dcolor%3A%20%23f6f6f6%3B%0A%20%20padding%3A%200%2E25em%200%2E75em%3B%0A%7D%0A%0Ahr%20%7B%0A%20%20border%2Dstyle%3A%20solid%3B%0A%20%20border%3A%20none%3B%0A%20%20border%2Dtop%3A%201px%20solid%20%23777%3B%0A%20%20margin%3A%2028px%200%3B%0A%7D%0A%0Adl%20%7B%0A%20%20margin%2Dleft%3A%200%3B%0A%7D%0A%20%20dl%20dd%20%7B%0A%20%20%20%20margin%2Dbottom%3A%2013px%3B%0A%20%20%20%20margin%2Dleft%3A%2013px%3B%0A%20%20%7D%0A%20%20dl%20dt%20%7B%0A%20%20%20%20font%2Dweight%3A%20bold%3B%0A%20%20%7D%0A%0Aul%20%7B%0A%20%20margin%2Dtop%3A%200%3B%0A%7D%0A%20%20ul%20li%20%7B%0A%20%20%20%20list%2Dstyle%3A%20circle%20outside%3B%0A%20%20%7D%0A%20%20ul%20ul%20%7B%0A%20%20%20%20margin%2Dbottom%3A%200%3B%0A%20%20%7D%0A%0Apre%2C%20code%20%7B%0A%20%20background%2Dcolor%3A%20%23f7f7f7%3B%0A%20%20border%2Dradius%3A%203px%3B%0A%20%20color%3A%20%23333%3B%0A%7D%0Apre%20%7B%0A%20%20white%2Dspace%3A%20pre%2Dwrap%3B%20%20%20%20%2F%2A%20Wrap%20long%20lines%20%2A%2F%0A%20%20border%2Dradius%3A%203px%3B%0A%20%20margin%3A%205px%200px%2010px%200px%3B%0A%20%20padding%3A%2010px%3B%0A%7D%0Apre%3Anot%28%5Bclass%5D%29%20%7B%0A%20%20background%2Dcolor%3A%20%23f7f7f7%3B%0A%7D%0A%0Acode%20%7B%0A%20%20font%2Dfamily%3A%20Consolas%2C%20Monaco%2C%20%27Courier%20New%27%2C%20monospace%3B%0A%20%20font%2Dsize%3A%2085%25%3B%0A%7D%0Ap%20%3E%20code%2C%20li%20%3E%20code%20%7B%0A%20%20padding%3A%202px%200px%3B%0A%7D%0A%0Adiv%2Efigure%20%7B%0A%20%20text%2Dalign%3A%20center%3B%0A%7D%0Aimg%20%7B%0A%20%20background%2Dcolor%3A%20%23FFFFFF%3B%0A%20%20padding%3A%202px%3B%0A%20%20border%3A%201px%20solid%20%23DDDDDD%3B%0A%20%20border%2Dradius%3A%203px%3B%0A%20%20border%3A%201px%20solid%20%23CCCCCC%3B%0A%20%20margin%3A%200%205px%3B%0A%7D%0A%0Ah1%20%7B%0A%20%20margin%2Dtop%3A%200%3B%0A%20%20font%2Dsize%3A%2035px%3B%0A%20%20line%2Dheight%3A%2040px%3B%0A%7D%0A%0Ah2%20%7B%0A%20%20border%2Dbottom%3A%204px%20solid%20%23f7f7f7%3B%0A%20%20padding%2Dtop%3A%2010px%3B%0A%20%20padding%2Dbottom%3A%202px%3B%0A%20%20font%2Dsize%3A%20145%25%3B%0A%7D%0A%0Ah3%20%7B%0A%20%20border%2Dbottom%3A%202px%20solid%20%23f7f7f7%3B%0A%20%20padding%2Dtop%3A%2010px%3B%0A%20%20font%2Dsize%3A%20120%25%3B%0A%7D%0A%0Ah4%20%7B%0A%20%20border%2Dbottom%3A%201px%20solid%20%23f7f7f7%3B%0A%20%20margin%2Dleft%3A%208px%3B%0A%20%20font%2Dsize%3A%20105%25%3B%0A%7D%0A%0Ah5%2C%20h6%20%7B%0A%20%20border%2Dbottom%3A%201px%20solid%20%23ccc%3B%0A%20%20font%2Dsize%3A%20105%25%3B%0A%7D%0A%0Aa%20%7B%0A%20%20color%3A%20%230033dd%3B%0A%20%20text%2Ddecoration%3A%20none%3B%0A%7D%0A%20%20a%3Ahover%20%7B%0A%20%20%20%20color%3A%20%236666ff%3B%20%7D%0A%20%20a%3Avisited%20%7B%0A%20%20%20%20color%3A%20%23800080%3B%20%7D%0A%20%20a%3Avisited%3Ahover%20%7B%0A%20%20%20%20color%3A%20%23BB00BB%3B%20%7D%0A%20%20a%5Bhref%5E%3D%22http%3A%22%5D%20%7B%0A%20%20%20%20text%2Ddecoration%3A%20underline%3B%20%7D%0A%20%20a%5Bhref%5E%3D%22https%3A%22%5D%20%7B%0A%20%20%20%20text%2Ddecoration%3A%20underline%3B%20%7D%0A%0A%2F%2A%20Class%20described%20in%20https%3A%2F%2Fbenjeffrey%2Ecom%2Fposts%2Fpandoc%2Dsyntax%2Dhighlighting%2Dcss%0A%20%20%20Colours%20from%20https%3A%2F%2Fgist%2Egithub%2Ecom%2Frobsimmons%2F1172277%20%2A%2F%0A%0Acode%20%3E%20span%2Ekw%20%7B%20color%3A%20%23555%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%2F%2A%20Keyword%20%2A%2F%0Acode%20%3E%20span%2Edt%20%7B%20color%3A%20%23902000%3B%20%7D%20%2F%2A%20DataType%20%2A%2F%0Acode%20%3E%20span%2Edv%20%7B%20color%3A%20%2340a070%3B%20%7D%20%2F%2A%20DecVal%20%28decimal%20values%29%20%2A%2F%0Acode%20%3E%20span%2Ebn%20%7B%20color%3A%20%23d14%3B%20%7D%20%2F%2A%20BaseN%20%2A%2F%0Acode%20%3E%20span%2Efl%20%7B%20color%3A%20%23d14%3B%20%7D%20%2F%2A%20Float%20%2A%2F%0Acode%20%3E%20span%2Ech%20%7B%20color%3A%20%23d14%3B%20%7D%20%2F%2A%20Char%20%2A%2F%0Acode%20%3E%20span%2Est%20%7B%20color%3A%20%23d14%3B%20%7D%20%2F%2A%20String%20%2A%2F%0Acode%20%3E%20span%2Eco%20%7B%20color%3A%20%23888888%3B%20font%2Dstyle%3A%20italic%3B%20%7D%20%2F%2A%20Comment%20%2A%2F%0Acode%20%3E%20span%2Eot%20%7B%20color%3A%20%23007020%3B%20%7D%20%2F%2A%20OtherToken%20%2A%2F%0Acode%20%3E%20span%2Eal%20%7B%20color%3A%20%23ff0000%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%2F%2A%20AlertToken%20%2A%2F%0Acode%20%3E%20span%2Efu%20%7B%20color%3A%20%23900%3B%20font%2Dweight%3A%20bold%3B%20%7D%20%2F%2A%20Function%20calls%20%2A%2F%20%0Acode%20%3E%20span%2Eer%20%7B%20color%3A%20%23a61717%3B%20background%2Dcolor%3A%20%23e3d2d2%3B%20%7D%20%2F%2A%20ErrorTok%20%2A%2F%0A%0A" rel="stylesheet" type="text/css" />
+
+</head>
+
+<body>
+
+
+
+<div id="header">
+<h1 class="title">Parameter and unit labels for insertion in R, Rmarkdown and LaTeX</h1>
+<h4 class="author"><em>Edward P. Morris</em></h4>
+<h4 class="date"><em>2015-07-22</em></h4>
+</div>
+
+
+<p>Scientific documents often require the use of relatively complicated terms for <strong>quantities</strong> and their <strong>units</strong>. Typing these out as ‘R expressions’, ‘Markdown’ or <span class="math">\(\LaTeX\)</span> can be tedious. So far, markdown does not contain a convenient mechanism for including ‘short-hand’ version of a quanity or unit labels.</p>
+<p><code>unitlabels</code> is a simple package that allows users to specify ‘short-hand’ codes for quanity or unit labels and translations into different markup. So far only ‘R expressions’ and ‘Rmarkdown’ are supported.</p>
+<div id="using-unitlabels" class="section level2">
+<h2>Using <code>unitlabels</code></h2>
+<p>Three functions are available <code>ul</code>, <code>uls</code> and <code>ulu</code>, which return combined ‘quantity-units symbol’, ‘quantity symbol’ and ‘units symbol’, respectively.</p>
+<p>Lets get started by loading the package:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># load the package</span>
+<span class="kw">library</span>(unitlabels)</code></pre>
+<p>Within an Rmarkdown document(‘.Rmd’) we can now insert formatted text by calling the appropriate R function ‘in-line’. Note for combinations of quantities and units, the 2 short-hand codes should be combined and delimited by a full stop, for example Temperature in degrees Celcius is:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="co"># return Rmarkdown label for temperature in degrees Celcius</span>
+<span class="kw">ul</span>(<span class="st">&quot;T.degC&quot;</span>, <span class="st">&quot;md&quot;</span>)</code></pre>
+<p>[1] “<em>T</em> (ºC)”</p>
+<ul>
+<li><code>&quot;T.degC&quot;</code> is our user defined shortand for <em>T</em> (ºC).</li>
+<li><em>T</em> was 25 ºC.</li>
+</ul>
+<p>Setting the <code>output=</code> option to <code>R</code> returns labels as ‘R expressions’ ready to be used in plots, for example:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">plot</span>(<span class="dv">1</span>:<span class="dv">10</span>,<span class="dv">1</span>:<span class="dv">10</span>, <span class="dt">ylab =</span> <span class="kw">ul</span>(<span class="st">&quot;T.degC&quot;</span>, <span class="st">&quot;R&quot;</span>), <span class="dt">xlab =</span> <span class="kw">ul</span>(<span class="st">&quot;Tsw.degC&quot;</span>, <span class="st">&quot;R&quot;</span>))</code></pre>
+<p><img src="data:image/png;base64,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" /></p>
+</div>
+<div id="defining-short-hand-quantity-units-labels" class="section level2">
+<h2>Defining short-hand quantity units labels</h2>
+<p>So far the short-hand quantity units labels are stored in a <code>definitions.csv</code> file within the package directory <code>extdata</code>. To find the file path on your system use:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;unitlabels&quot;</span>)</code></pre>
+<p>[1] “/home/edea/R/i686-pc-linux-gnu-library/3.2/unitlabels/extdata”</p>
+<p>This file can be editted and saved by the user, furthermore facilities to define the path to a specific definitions file are provided. NOTE: test if this works!</p>
+<p>To see which short-hand quantities and unit labels are available we can directly access this file and produce a table:</p>
+<pre class="sourceCode r"><code class="sourceCode r"><span class="kw">require</span>(unitlabels)
+def &lt;-<span class="st"> </span><span class="kw">system.file</span>(<span class="st">&quot;extdata&quot;</span>, <span class="dt">package =</span> <span class="st">&quot;unitlabels&quot;</span>)
+def &lt;-<span class="st"> </span><span class="kw">paste0</span>(def,<span class="st">&quot;/definitions.csv&quot;</span>)
+def &lt;-<span class="st"> </span><span class="kw">read.csv</span>(def, <span class="dt">as.is =</span> T)
+knitr::<span class="kw">kable</span>(def[,<span class="kw">c</span>(<span class="st">&quot;standard.name&quot;</span>, <span class="st">&quot;sh.symbol&quot;</span>, <span class="st">&quot;symbol.md&quot;</span>)])</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">standard.name</th>
+<th align="left">sh.symbol</th>
+<th align="left">symbol.md</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">depth</td>
+<td align="left">z</td>
+<td align="left"><em>z</em></td>
+</tr>
+<tr class="even">
+<td align="left">temperature_as_Celsius</td>
+<td align="left">T</td>
+<td align="left"><em>T</em></td>
+</tr>
+<tr class="odd">
+<td align="left">sea_water_temperature_as_Celsius</td>
+<td align="left">Tsw</td>
+<td align="left"><em>T</em><sub>sw</sub></td>
+</tr>
+<tr class="even">
+<td align="left">air_temperature_as_Celsius</td>
+<td align="left">Tair</td>
+<td align="left"><em>T</em><sub>air</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">air_pressure_at_sea_level</td>
+<td align="left">apsl</td>
+<td align="left"><em>p</em><sub>air,sl</sub></td>
+</tr>
+<tr class="even">
+<td align="left">relative_humidity</td>
+<td align="left">RH</td>
+<td align="left"><em>ϕ</em></td>
+</tr>
+<tr class="odd">
+<td align="left">conductivity_of_water</td>
+<td align="left">s</td>
+<td align="left"><em>s</em></td>
+</tr>
+<tr class="even">
+<td align="left">sea_water_practical_salinity</td>
+<td align="left">Spsu</td>
+<td align="left"><em>S</em><sub>psu</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">sea_water_pH_reported_on_NBS_scale</td>
+<td align="left">pHNBS</td>
+<td align="left"><em>pH</em><sub>NBS</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mass_ratio_of_phaeophytin_to_chlorophyll_a</td>
+<td align="left">RPhaeoChla</td>
+<td align="left"><em>Phaeo:Chla</em></td>
+</tr>
+<tr class="odd">
+<td align="left">mass_fraction_of_particulate_organic_matter_in_total_suspended_solids</td>
+<td align="left">wPOMTSS</td>
+<td align="left"><em>w</em><sub>POM:TSS</sub></td>
+</tr>
+<tr class="even">
+<td align="left">precipitation_rate</td>
+<td align="left">precipRate</td>
+<td align="left"><em>Precip. rate</em></td>
+</tr>
+<tr class="odd">
+<td align="left">daily_precipitation</td>
+<td align="left">dPrecip</td>
+<td align="left"><em>Precipitation</em></td>
+</tr>
+<tr class="even">
+<td align="left">hourly_precipitation</td>
+<td align="left">hPrecip</td>
+<td align="left"><em>Precipitation</em></td>
+</tr>
+<tr class="odd">
+<td align="left">rainfall</td>
+<td align="left">rain</td>
+<td align="left"><em>Rainfall</em></td>
+</tr>
+<tr class="even">
+<td align="left">wind_speed_at_zm_above_surface</td>
+<td align="left">uz</td>
+<td align="left"><em>u</em><sub>z</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">wind_speed_at_10m_above_surface</td>
+<td align="left">u10</td>
+<td align="left"><em>u</em><sub>10</sub></td>
+</tr>
+<tr class="even">
+<td align="left">carbon_dioxide</td>
+<td align="left">CO2</td>
+<td align="left">CO<sub>2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">carbon_dioxide_partial_pressure</td>
+<td align="left">pCO2</td>
+<td align="left"><em>p</em><sub>CO2</sub></td>
+</tr>
+<tr class="even">
+<td align="left">carbon_dioxide_partial_pressure_in_sea_water</td>
+<td align="left">pCO2sw</td>
+<td align="left"><em>p</em><sub>sw,CO2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">carbon_dioxide_partial_pressure_in_air</td>
+<td align="left">pCO2air</td>
+<td align="left"><em>p</em><sub>air,CO2</sub></td>
+</tr>
+<tr class="even">
+<td align="left">oxygen_partial_pressure</td>
+<td align="left">pO2</td>
+<td align="left"><em>p</em><sub>O2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">oxygen_partial_pressure_in_sea_water</td>
+<td align="left">pO2sw</td>
+<td align="left"><em>p</em><sub>sw,O2</sub></td>
+</tr>
+<tr class="even">
+<td align="left">oxygen_partial_pressure_in_air</td>
+<td align="left">pO2air</td>
+<td align="left"><em>p</em><sub>air,O2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">volume_of_mesozooplankton_biomass</td>
+<td align="left">VMZbio</td>
+<td align="left"><em>V</em><sub>zoo.bio.</sub></td>
+</tr>
+<tr class="even">
+<td align="left">specific_volume_of_mesozooplankton_biomass</td>
+<td align="left">svMZbio</td>
+<td align="left"><em>υ</em><sub>zoo.bio.</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mass_concentration_of_mesozooplankton_biomass</td>
+<td align="left">rMZbio</td>
+<td align="left"><em>ρ</em><sub>zoo.bio.</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mass_concentration_of_phaeophytin_in_sea_water</td>
+<td align="left">rPhaeo</td>
+<td align="left"><em>ρ</em><sub>Phaeo</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mass_concentration_of_chlorophyll_a_in_sea_water</td>
+<td align="left">rChla</td>
+<td align="left"><em>ρ</em><sub>Chla</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mass_concentration_of_total_suspended_solids</td>
+<td align="left">rTSS</td>
+<td align="left"><em>ρ</em><sub>TSS</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mass_concentration_of_particulate_inorganic_matter</td>
+<td align="left">rPIM</td>
+<td align="left"><em>ρ</em><sub>PIM</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mass_concentration_of_particulate_organic_matter</td>
+<td align="left">rPOM</td>
+<td align="left"><em>ρ</em><sub>POM</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">sea_water_alkalinity_expressed_as_mole_equivalent</td>
+<td align="left">cAT</td>
+<td align="left"><em>c</em><sub>AT</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_dissolved_molecular_oxygen_in_sea_water</td>
+<td align="left">cO2</td>
+<td align="left"><em>c</em><sub>O2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_ammonium_in_sea_water</td>
+<td align="left">cNH4</td>
+<td align="left"><em>c</em><sub>NH4</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_nitrite_in_sea_water</td>
+<td align="left">cNO2</td>
+<td align="left"><em>c</em><sub>NO2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_silicate_in_sea_water</td>
+<td align="left">cdSi</td>
+<td align="left"><em>c</em><sub>dSi</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_phosphate_in_sea_water</td>
+<td align="left">cdPi</td>
+<td align="left"><em>c</em><sub>dPi</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_nitrate_in_sea_water</td>
+<td align="left">cNO3</td>
+<td align="left"><em>c</em><sub>NO3</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_dissolved_organic_nitrogen_in_sea_water</td>
+<td align="left">cDON</td>
+<td align="left"><em>c</em><sub>DON</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_dissolved_nitrogen_in_sea_water</td>
+<td align="left">cDN</td>
+<td align="left"><em>c</em><sub>DN</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_dissolved_organic_carbon_in_sea_water</td>
+<td align="left">cDOC</td>
+<td align="left"><em>c</em><sub>DOC</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_dissolved_inorganic_carbon_in_sea_water</td>
+<td align="left">cDIC</td>
+<td align="left"><em>c</em><sub>DIC</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_carbon_dioxide_in_sea_water</td>
+<td align="left">cCO2</td>
+<td align="left"><em>c</em><sub>CO2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_carbonate_in_sea_water</td>
+<td align="left">cCO3</td>
+<td align="left"><em>c</em><sub>CO3</sub></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_bicarbonate_in_sea_water</td>
+<td align="left">cHCO3</td>
+<td align="left"><em>c</em><sub>HCO3</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">downwelling_photosynthetic_photon_flux</td>
+<td align="left">PPFd</td>
+<td align="left"><em>PPF</em><sub>d</sub></td>
+</tr>
+<tr class="even">
+<td align="left">surface_upward_mole_flux_of_carbon_dioxide</td>
+<td align="left">FCO2</td>
+<td align="left"><em>F</em><sub>CO2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">surface_upward_mole_flux_of_carbon_dioxide_as_carbon</td>
+<td align="left">FCO2</td>
+<td align="left"><em>F</em><sub>CO2</sub></td>
+</tr>
+<tr class="even">
+<td align="left">surface_upward_mole_transport_of_carbon</td>
+<td align="left">dotnCO2</td>
+<td align="left"><em>ṅ</em><sub>CO2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">surface_upward_mass_transport_of_carbon</td>
+<td align="left">dotmC</td>
+<td align="left"><em>ṁ</em><sub>C</sub></td>
+</tr>
+<tr class="even">
+<td align="left">surface_area_covered_by water</td>
+<td align="left">Awater</td>
+<td align="left"><em>A</em><sub>water</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">aqueous_phase_solubility_of_carbon_dioxide</td>
+<td align="left">KoCO2</td>
+<td align="left"><em>K</em><sub>o,CO2</sub></td>
+</tr>
+<tr class="even">
+<td align="left">water_side_gas_transfer_velocity_of_carbon_dioxide</td>
+<td align="left">kwCO2</td>
+<td align="left"><em>k</em><sub>w,CO2</sub></td>
+</tr>
+<tr class="odd">
+<td align="left">schmidt_number _of_water</td>
+<td align="left">Scw</td>
+<td align="left"><em>Sc</em><sub>w</sub></td>
+</tr>
+<tr class="even">
+<td align="left">gas_transfer_velocity_at_Sc660</td>
+<td align="left">k660</td>
+<td align="left"><em>k</em><sub>660</sub></td>
+</tr>
+</tbody>
+</table>
+<pre class="sourceCode r"><code class="sourceCode r">knitr::<span class="kw">kable</span>(def[,<span class="kw">c</span>(<span class="st">&quot;standard.name&quot;</span>, <span class="st">&quot;sh.units&quot;</span>, <span class="st">&quot;units.md&quot;</span>)])</code></pre>
+<table>
+<thead>
+<tr class="header">
+<th align="left">standard.name</th>
+<th align="left">sh.units</th>
+<th align="left">units.md</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">depth</td>
+<td align="left">m</td>
+<td align="left">m</td>
+</tr>
+<tr class="even">
+<td align="left">temperature_as_Celsius</td>
+<td align="left">degC</td>
+<td align="left">ºC</td>
+</tr>
+<tr class="odd">
+<td align="left">sea_water_temperature_as_Celsius</td>
+<td align="left">degC</td>
+<td align="left">ºC</td>
+</tr>
+<tr class="even">
+<td align="left">air_temperature_as_Celsius</td>
+<td align="left">degC</td>
+<td align="left">ºC</td>
+</tr>
+<tr class="odd">
+<td align="left">air_pressure_at_sea_level</td>
+<td align="left">hPa</td>
+<td align="left">hPa</td>
+</tr>
+<tr class="even">
+<td align="left">relative_humidity</td>
+<td align="left"></td>
+<td align="left">NULL</td>
+</tr>
+<tr class="odd">
+<td align="left">conductivity_of_water</td>
+<td align="left">S_m</td>
+<td align="left">S m<sup>-1</sup></td>
+</tr>
+<tr class="even">
+<td align="left">sea_water_practical_salinity</td>
+<td align="left"></td>
+<td align="left">NULL</td>
+</tr>
+<tr class="odd">
+<td align="left">sea_water_pH_reported_on_NBS_scale</td>
+<td align="left"></td>
+<td align="left">NULL</td>
+</tr>
+<tr class="even">
+<td align="left">mass_ratio_of_phaeophytin_to_chlorophyll_a</td>
+<td align="left"></td>
+<td align="left">NULL</td>
+</tr>
+<tr class="odd">
+<td align="left">mass_fraction_of_particulate_organic_matter_in_total_suspended_solids</td>
+<td align="left"></td>
+<td align="left">NULL</td>
+</tr>
+<tr class="even">
+<td align="left">precipitation_rate</td>
+<td align="left">kg_m2s</td>
+<td align="left">kg m<sup>-2</sup> s<sup>-1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">daily_precipitation</td>
+<td align="left">mm_d</td>
+<td align="left">mm d<sup>-1</sup></td>
+</tr>
+<tr class="even">
+<td align="left">hourly_precipitation</td>
+<td align="left">mm_h</td>
+<td align="left">mm h<sup>-1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">rainfall</td>
+<td align="left">mm</td>
+<td align="left">mm</td>
+</tr>
+<tr class="even">
+<td align="left">wind_speed_at_zm_above_surface</td>
+<td align="left">m_s</td>
+<td align="left">m s<sup>-1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">wind_speed_at_10m_above_surface</td>
+<td align="left">m_s</td>
+<td align="left">m s<sup>-1</sup></td>
+</tr>
+<tr class="even">
+<td align="left">carbon_dioxide</td>
+<td align="left">uatm</td>
+<td align="left">μatm</td>
+</tr>
+<tr class="odd">
+<td align="left">carbon_dioxide_partial_pressure</td>
+<td align="left">uatm</td>
+<td align="left">μatm</td>
+</tr>
+<tr class="even">
+<td align="left">carbon_dioxide_partial_pressure_in_sea_water</td>
+<td align="left">uatm</td>
+<td align="left">μatm</td>
+</tr>
+<tr class="odd">
+<td align="left">carbon_dioxide_partial_pressure_in_air</td>
+<td align="left">uatm</td>
+<td align="left">μatm</td>
+</tr>
+<tr class="even">
+<td align="left">oxygen_partial_pressure</td>
+<td align="left">matm</td>
+<td align="left">matm</td>
+</tr>
+<tr class="odd">
+<td align="left">oxygen_partial_pressure_in_sea_water</td>
+<td align="left">matm</td>
+<td align="left">matm</td>
+</tr>
+<tr class="even">
+<td align="left">oxygen_partial_pressure_in_air</td>
+<td align="left">matm</td>
+<td align="left">matm</td>
+</tr>
+<tr class="odd">
+<td align="left">volume_of_mesozooplankton_biomass</td>
+<td align="left">m3</td>
+<td align="left">m<sup>3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">specific_volume_of_mesozooplankton_biomass</td>
+<td align="left">m3_g</td>
+<td align="left">m<sup>3</sup> g<sup>-1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mass_concentration_of_mesozooplankton_biomass</td>
+<td align="left">mg_L</td>
+<td align="left">g dm<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mass_concentration_of_phaeophytin_in_sea_water</td>
+<td align="left">ug_L</td>
+<td align="left">g m<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mass_concentration_of_chlorophyll_a_in_sea_water</td>
+<td align="left">ug_L</td>
+<td align="left">g m<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mass_concentration_of_total_suspended_solids</td>
+<td align="left">mg_L</td>
+<td align="left">g dm<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mass_concentration_of_particulate_inorganic_matter</td>
+<td align="left">mg_L</td>
+<td align="left">g dm<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mass_concentration_of_particulate_organic_matter</td>
+<td align="left">mg_L</td>
+<td align="left">g dm<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">sea_water_alkalinity_expressed_as_mole_equivalent</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_dissolved_molecular_oxygen_in_sea_water</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_ammonium_in_sea_water</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_nitrite_in_sea_water</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_silicate_in_sea_water</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_phosphate_in_sea_water</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_nitrate_in_sea_water</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_dissolved_organic_nitrogen_in_sea_water</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_dissolved_nitrogen_in_sea_water</td>
+<td align="left">umol_L</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_dissolved_organic_carbon_in_sea_water</td>
+<td align="left">mmol_L</td>
+<td align="left">mol dm<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_dissolved_inorganic_carbon_in_sea_water</td>
+<td align="left">mmol_L</td>
+<td align="left">mol dm<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_carbon_dioxide_in_sea_water</td>
+<td align="left">mol_m3</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">mole_concentration_of_carbonate_in_sea_water</td>
+<td align="left">mol_m3</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="even">
+<td align="left">mole_concentration_of_bicarbonate_in_sea_water</td>
+<td align="left">mol_m3</td>
+<td align="left">mol m<sup>-3</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">downwelling_photosynthetic_photon_flux</td>
+<td align="left">umol_m2s</td>
+<td align="left">μmol m<sup>-2</sup> s<sup>-1</sup></td>
+</tr>
+<tr class="even">
+<td align="left">surface_upward_mole_flux_of_carbon_dioxide</td>
+<td align="left">mmol_m2d</td>
+<td align="left">mmol m<sup>-2</sup> d<sup>-1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">surface_upward_mole_flux_of_carbon_dioxide_as_carbon</td>
+<td align="left">mol_m2y</td>
+<td align="left">Mmol m<sup>-2</sup> y<sup>-1</sup></td>
+</tr>
+<tr class="even">
+<td align="left">surface_upward_mole_transport_of_carbon</td>
+<td align="left">Mmol_d</td>
+<td align="left">Mmol d<sup>-1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">surface_upward_mass_transport_of_carbon</td>
+<td align="left">Gg_y</td>
+<td align="left">Gg y<sup>-1</sup></td>
+</tr>
+<tr class="even">
+<td align="left">surface_area_covered_by water</td>
+<td align="left">km2</td>
+<td align="left">km<sup>2</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">aqueous_phase_solubility_of_carbon_dioxide</td>
+<td align="left">mol_m3atm</td>
+<td align="left">mol m<sup>-3</sup> atm<sup>-1</sup></td>
+</tr>
+<tr class="even">
+<td align="left">water_side_gas_transfer_velocity_of_carbon_dioxide</td>
+<td align="left">m_s</td>
+<td align="left">m s<sup>-1</sup></td>
+</tr>
+<tr class="odd">
+<td align="left">schmidt_number _of_water</td>
+<td align="left"></td>
+<td align="left"></td>
+</tr>
+<tr class="even">
+<td align="left">gas_transfer_velocity_at_Sc660</td>
+<td align="left">m_s</td>
+<td align="left">m s<sup>-1</sup></td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    script.src  = "https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML";
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+
+</body>
+</html>
