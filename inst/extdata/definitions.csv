@@ -29,26 +29,26 @@ oxygen_partial_pressure_in_sea_water,atm,pO2sw,"*p*~sw,~~O~~2~","italic(p)[list(
 oxygen_partial_pressure_in_air,atm,pO2air,"*p*~air,~~O~~2~","italic(p)[list(air,O[2])]",matm,matm,matm,matm
 volume_of_mesozooplankton_biomass,m3,VMZbio,*V*~zoo.~~bio.~,italic(V)[zoo. bio.],m3,m3,m^3^,m^3
 specific_volume_of_mesozooplankton_biomass,m3/g,svMZbio,*υ*~zoo.~~bio.~,italic(upsilon)[zoo. bio.],m3/g,m3_g,m^3^ g^-1^,m^3 ~g^-1
-mass_concentration_of_mesozooplankton_biomass,g/m3,rMZbio,*ρ*~zoo.~~bio.~,italic(rho)[zoo. bio.],mg/L,mg_L,g dm^-3^,g~dm^-3
-mass_concentration_of_phaeophytin_in_sea_water,g/m3,rPhaeo,*ρ*~Phaeo~,italic(rho)[Phaeo],g/m3,ug_L,g m^-3^,g~m^-3
-mass_concentration_of_chlorophyll_a_in_sea_water,g/m3,rChla,*ρ*~Chla~,italic(rho)[Chla],g/m3,ug_L,g m^-3^,g~m^-3
-mass_concentration_of_total_suspended_solids,g/m3,rTSS,*ρ*~TSS~,italic(rho)[TSS],mg/L,mg_L,g dm^-3^,g~dm^-3
-mass_concentration_of_particulate_inorganic_matter,g/m3,rPIM,*ρ*~PIM~,italic(rho)[PIM],mg/L,mg_L,g dm^-3^,g~dm^-3
-mass_concentration_of_particulate_organic_matter,g/m3,rPOM,*ρ*~POM~,italic(rho)[POM],mg/L,mg_L,g dm^-3^,g~dm^-3
-sea_water_alkalinity_expressed_as_mole_equivalent,mol/m3,cAT,*c*~A~~T~,italic(c)[A[T]],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,mol/m3,cO2,*c*~O~~2~,italic(c)[O[2]],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_ammonium_in_sea_water,mol/m3,cNH4,*c*~NH~~4~,italic(c)[NH[4]],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_nitrite_in_sea_water,mol/m3,cNO2,*c*~NO~~2~,italic(c)[NO[2]],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_silicate_in_sea_water,mol/m3,cdSi,*c*~dSi~,italic(c)[dSi],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_phosphate_in_sea_water,mol/m3,cdPi,*c*~dPi~,italic(c)[dPi],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_nitrate_in_sea_water,mol/m3,cNO3,*c*~NO~~3~,italic(c)[NO[3]],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_dissolved_organic_nitrogen_in_sea_water,mol/m3,cDON,*c*~DON~,italic(c)[DON],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_dissolved_nitrogen_in_sea_water,mol/m3,cDN,*c*~DN~,italic(c)[DN],mol/m3,umol_L,mol m^-3^,mol~m^-3
-mole_concentration_of_dissolved_organic_carbon_in_sea_water,mol/m3,cDOC,*c*~DOC~,italic(c)[DOC],mmol/L,mmol_L,mol dm^-3^,mol dm^-3^
-mole_concentration_of_dissolved_inorganic_carbon_in_sea_water,mol/m3,cDIC,*c*~DIC~,italic(c)[DIC],mmol/L,mmol_L,mol dm^-3^,mol dm^-3^
-mole_concentration_of_carbon_dioxide_in_sea_water,mol/m3,cCO2,*c*~CO~~2~,italic(c)[CO[2]],mol/m3,mol_m3,mol m^-3^,mol~m^-3
-mole_concentration_of_carbonate_in_sea_water,mol/m3,cCO3,*c*~CO~~3~,italic(c)[CO[3]],mol/m3,mol_m3,mol m^-3^,mol~m^-3
-mole_concentration_of_bicarbonate_in_sea_water,mol/m3,cHCO3,*c*~HCO~~3~,italic(c)[HCO[3]],mol/m3,mol_m3,mol m^-3^,mol~m^-3
+mass_concentration_of_mesozooplankton_biomass,g/m3,rMZbio,*ρ*~zoo.~~bio.~,italic(rho)[zoo. bio.],mg/L,mg_L,g m^-3^,g~m^-3
+mass_concentration_of_phaeophytin_in_sea_water,g/m3,rPhaeo,*ρ*~Phaeo~,italic(rho)[Phaeo],g/m3,ug_L,mg m^-3^,mg~m^-3
+mass_concentration_of_chlorophyll_a_in_sea_water,g/m3,rChla,*ρ*~Chla~,italic(rho)[Chla],g/m3,ug_L,mg m^-3^,mg~m^-3
+mass_concentration_of_total_suspended_solids,g/m3,rTSS,*ρ*~TSS~,italic(rho)[TSS],mg/L,mg_L,g m^-3^,g~m^-3
+mass_concentration_of_particulate_inorganic_matter,g/m3,rPIM,*ρ*~PIM~,italic(rho)[PIM],mg/L,mg_L,g m^-3^,g~m^-3
+mass_concentration_of_particulate_organic_matter,g/m3,rPOM,*ρ*~POM~,italic(rho)[POM],mg/L,mg_L,g m^-3^,g~m^-3
+sea_water_alkalinity_expressed_as_mole_equivalent,mol/m3,cAT,*c*~A~~T~,italic(c)[A[T]],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_dissolved_molecular_oxygen_in_sea_water,mol/m3,cO2,*c*~O~~2~,italic(c)[O[2]],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_ammonium_in_sea_water,mol/m3,cNH4,*c*~NH~~4~,italic(c)[NH[4]],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_nitrite_in_sea_water,mol/m3,cNO2,*c*~NO~~2~,italic(c)[NO[2]],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_silicate_in_sea_water,mol/m3,cdSi,*c*~dSi~,italic(c)[dSi],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_phosphate_in_sea_water,mol/m3,cdPi,*c*~dPi~,italic(c)[dPi],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_nitrate_in_sea_water,mol/m3,cNO3,*c*~NO~~3~,italic(c)[NO[3]],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_dissolved_organic_nitrogen_in_sea_water,mol/m3,cDON,*c*~DON~,italic(c)[DON],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_dissolved_nitrogen_in_sea_water,mol/m3,cDN,*c*~DN~,italic(c)[DN],mmol/m3,umol_L,mmol m^-3^,mmol~m^-3
+mole_concentration_of_dissolved_organic_carbon_in_sea_water,mol/m3,cDOC,*c*~DOC~,italic(c)[DOC],mmol/L,mmol_L,mol m^-3^,mol m^-3^
+mole_concentration_of_dissolved_inorganic_carbon_in_sea_water,mol/m3,cDIC,*c*~DIC~,italic(c)[DIC],mmol/L,mmol_L,mol m^-3^,mol m^-3^
+mole_concentration_of_carbon_dioxide_in_sea_water,mol/m3,cCO2,*c*~CO~~2~,italic(c)[CO[2]],mol/m3,mol_m3,mol m^-3^,mol m^-3^
+mole_concentration_of_carbonate_in_sea_water,mol/m3,cCO3,*c*~CO~~3~,italic(c)[CO[3]],mol/m3,mol_m3,mol m^-3^,mol m^-3^
+mole_concentration_of_bicarbonate_in_sea_water,mol/m3,cHCO3,*c*~HCO~~3~,italic(c)[HCO[3]],mol/m3,mol_m3,mol m^-3^,mol m^-3^
 downwelling_photosynthetic_photon_flux,mol/m2.s,PPFd,*PPF*~d~,italic(PPF)[d],umol/m2.s,umol_m2s,μmol m^-2^ s^-1^,μmol~m^-2~s^-1
 surface_upward_mole_flux_of_carbon_dioxide,mol/m2.s,FCO2,*F*~CO~~2~,italic(F)[CO[2]],mmol/m2.day,mmol_m2d,mmol m^-2^ d^-1^,mmol~m^-2~d^-1
 surface_upward_mole_flux_of_carbon_dioxide_as_carbon,mol/m2.s,FCO2,*F*~CO~~2~,italic(F)[CO[2]],mol/m2.year,mol_m2y,Mmol m^-2^ y^-1^,Mmol~m^-2~y^-1
