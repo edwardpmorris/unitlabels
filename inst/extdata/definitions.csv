@@ -27,8 +27,8 @@ carbon_dioxide_partial_pressure_in_air,atm,pCO2air,"*p*~air,~~CO~~2~","italic(p)
 oxygen_partial_pressure,atm,pO2,*p*~O~~2~,italic(p)[O[2]],matm,matm,matm,matm
 oxygen_partial_pressure_in_sea_water,atm,pO2sw,"*p*~sw,~~O~~2~","italic(p)[list(sw,O[2])]",matm,matm,matm,matm
 oxygen_partial_pressure_in_air,atm,pO2air,"*p*~air,~~O~~2~","italic(p)[list(air,O[2])]",matm,matm,matm,matm
-volume_of_mesozooplankton_biomass,m3,VMZbio,*V*~zoo.~~bio.~,italic(V)[zoo.~bio.],ml/m3,ml_m3,ml m^-3^,ml~m^-3
-specific_volume_of_mesozooplankton_biomass,m3/g,svMZbio,*υ*~zoo.~~bio.~,italic(upsilon)[zoo.~bio.],m3/g,m3_g,m^3^ g^-1^,m^3 ~g^-1
+volume_of_mesozooplankton_biomass,m3,VMZbio,*V*~zoo.~~bio.~,italic(V)[zoo.~bio.],ml/m3,mL_m3,mL m^-3^,mL~m^-3
+specific_volume_of_mesozooplankton_biomass,m3/g,svMZbio,*υ*~zoo.~~bio.~,italic(upsilon)[zoo.~bio.],m3/g,mL_mg,mL^1^ mg^-1^,mL ~mg^-1
 mass_concentration_of_mesozooplankton_biomass,g/m3,rMZbio,*ρ*~zoo.~~bio.~,italic(rho)[zoo.~bio.],mg/m3,mg_m3,mg m^-3^,mg~m^-3
 mass_concentration_of_phaeophytin_in_sea_water,g/m3,rPhaeo,*ρ*~Phaeo~,italic(rho)[Phaeo],g/m3,ug_L,mg m^-3^,mg~m^-3
 mass_concentration_of_chlorophyll_a_in_sea_water,g/m3,rChla,*ρ*~Chla~,italic(rho)[Chla],g/m3,ug_L,mg m^-3^,mg~m^-3
