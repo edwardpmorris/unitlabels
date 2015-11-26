@@ -23,8 +23,8 @@
 uls <- function(sh, output="md", definitions=NULL){
   if(is.null(definitions)){definitions <- system.file("extdata", package = "unitlabels")
   definitions <- paste0(definitions,"/definitions.csv")}
-  definitions <- read.csv(definitions, as.is = T)
-  sh <- strsplit(sh,".", fixed=T)[[1]][1]
+  definitions <- read.csv2(definitions, as.is = T)
+  if(!is.na(pmatch("[.]", sh))){sh <- strsplit(sh,".", fixed=T)[[1]][1]}
   if(output=="R"){
     out <-definitions[match(sh,definitions$sh.symbol),paste0("symbol.",output)]
     out <- parse(text=out)
@@ -42,8 +42,8 @@ uls <- function(sh, output="md", definitions=NULL){
 ulu <- function(sh, output="md", definitions=NULL){
   if(is.null(definitions)){definitions <- system.file("extdata", package = "unitlabels")
   definitions <- paste0(definitions,"/definitions.csv")}
-  definitions <- read.csv(definitions, as.is = T)
-  sh <- strsplit(sh,".", fixed=T)[[1]][2]
+  definitions <- read.csv2(definitions, as.is = T)
+  if(!is.na(pmatch("[.]", sh))){sh <- strsplit(sh,".", fixed=T)[[1]][2]}
   if(output=="R"){
     out <-definitions[match(sh,definitions$sh.units),paste0("units.",output)]
     out <- parse(text=out)
@@ -64,7 +64,7 @@ ul <- function(sh, output = "md", definitions = NULL) {
     definitions <- system.file("extdata", package = "unitlabels")
     definitions <- paste0(definitions,"/definitions.csv")
   }
-  definitions <- read.csv(definitions, as.is = T)
+  definitions <- read.csv2(definitions, as.is = T)
   sh <- strsplit(sh,"[.]")
 
   get.lab <- function(sh,output) {
