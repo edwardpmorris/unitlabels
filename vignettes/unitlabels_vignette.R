@@ -16,7 +16,7 @@ system.file("extdata", package = "unitlabels")
 require(unitlabels)
 def <- system.file("extdata", package = "unitlabels")
 def <- paste0(def,"/definitions.csv")
-def <- read.csv(def, as.is = T)
+def <- read.csv2(def, as.is = T)
 knitr::kable(def[,c("standard.name", "sh.symbol", "symbol.md")])
 knitr::kable(def[,c("standard.name", "sh.units", "units.md")])
 
