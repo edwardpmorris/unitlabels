@@ -46,7 +46,7 @@ So far the short-hand quantity units labels are stored in a `definitions.csv` fi
 system.file("extdata", package = "unitlabels")
 ```
 
-This file can be editted and saved by the user, furthermore facilities to define the path to a specific definitions file are provided. NOTE: test if this works!
+This file can be edited and saved by the user, furthermore facilities to define the path to a specific definitions file are provided. NOTE: test if this works!
 
 To see which short-hand quantities and unit labels are available we can directly access this file and produce a table:
 
@@ -54,7 +54,7 @@ To see which short-hand quantities and unit labels are available we can directly
 require(unitlabels)
 def <- system.file("extdata", package = "unitlabels")
 def <- paste0(def,"/definitions.csv")
-def <- read.csv(def, as.is = T)
+def <- read.csv2(def, as.is = T)
 knitr::kable(def[,c("standard.name", "sh.symbol", "symbol.md")])
 knitr::kable(def[,c("standard.name", "sh.units", "units.md")])
 ```

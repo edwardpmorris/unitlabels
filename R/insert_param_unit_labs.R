@@ -24,7 +24,7 @@ uls <- function(sh, output="md", definitions=NULL){
   if(is.null(definitions)){definitions <- system.file("extdata", package = "unitlabels")
   definitions <- paste0(definitions,"/definitions.csv")}
   definitions <- read.csv2(definitions, as.is = T)
-  if(!is.na(pmatch("[.]", sh))){sh <- strsplit(sh,".", fixed=T)[[1]][1]}
+  if(grepl(".", sh, fixed=T)){sh <- strsplit(sh,".", fixed=T)[[1]][1]}
   if(output=="R"){
     out <-definitions[match(sh,definitions$sh.symbol),paste0("symbol.",output)]
     out <- parse(text=out)
@@ -43,7 +43,7 @@ ulu <- function(sh, output="md", definitions=NULL){
   if(is.null(definitions)){definitions <- system.file("extdata", package = "unitlabels")
   definitions <- paste0(definitions,"/definitions.csv")}
   definitions <- read.csv2(definitions, as.is = T)
-  if(!is.na(pmatch("[.]", sh))){sh <- strsplit(sh,".", fixed=T)[[1]][2]}
+  if(grepl(".", sh, fixed=T)){sh <- strsplit(sh,".", fixed=T)[[1]][2]}
   if(output=="R"){
     out <-definitions[match(sh,definitions$sh.units),paste0("units.",output)]
     out <- parse(text=out)
