@@ -10,3 +10,4 @@ A basic version of the concept is now more or less working.
 + provide more flexibility and ease of use in terms of users defining label lists
 + look into ways of acessing online resources for quantity names and units (such as CF standards)
 + integrate with 'udunits2'
++ hello
